@@ -1,6 +1,6 @@
 # ML-Pneumonia
  
-This is a group assignment for the course Machine Learning at Østfold University College. 
+This is a group assignment for the Master's course "Machine Learning" at Østfold University College. 
 The assignment is to create a neural network on a dataset of our choice. We chose the dataset from 
 Kaggle: https://www.kaggle.com/paultimothymooney/chest-xray-pneumonia. This dataset contains 
 chest x-ray images of patients with and without pneumonia. We will use this dataset to create a
