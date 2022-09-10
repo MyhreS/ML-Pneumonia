@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="48d70ff2-7f1c-4b03-b245-f4c346e54b92" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/data-processing/balanced-data-analysis.ipynb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -13,6 +14,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Python Script" />
+        <option value="Jupyter Notebook" />
       </list>
     </option>
   </component>
@@ -23,7 +25,9 @@
     <option name="stateVersion" value="1" />
   </component>
   <component name="ProjectId" id="2EZlLGmaoXeca7r0P4CtSD0s6CE" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -74,7 +78,7 @@
       <option name="presentableId" value="Default" />
       <updated>1662810929939</updated>
       <workItem from="1662810934587" duration="1195000" />
-      <workItem from="1662812303599" duration="5735000" />
+      <workItem from="1662812303599" duration="7548000" />
     </task>
     <servers />
   </component>
