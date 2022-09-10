@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="48d70ff2-7f1c-4b03-b245-f4c346e54b92" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/data-processing/balanced-data-analysis.ipynb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="48d70ff2-7f1c-4b03-b245-f4c346e54b92" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -78,7 +75,7 @@
       <option name="presentableId" value="Default" />
       <updated>1662810929939</updated>
       <workItem from="1662810934587" duration="1195000" />
-      <workItem from="1662812303599" duration="7548000" />
+      <workItem from="1662812303599" duration="8172000" />
     </task>
     <servers />
   </component>
