@@ -1,16 +1,20 @@
 import glob
 import itertools
-
 import cv2
 import shutil
 import os
-import imgaug as ia
 from imgaug import augmenters as iaa
 
+"""
+This class is used to augment images and save them to a new directory.
+"""
 class ReshaperAndAugmenter:
     def __init__(self):
         self.augment_combinations = self.calculate_combinations()
 
+    """
+    This function returnes the different types of augmentation that will be used.
+    """
     def get_augmentation_types(self):
         return [
             iaa.SaltAndPepper(0.05),
@@ -24,6 +28,10 @@ class ReshaperAndAugmenter:
             iaa.PerspectiveTransform(scale=(0.01, 0.1))
         ]
 
+    """
+    This function calculates the different combinations of the augmenation types. All the combinations
+    will be used in the augmentation of the images.
+    """
     def calculate_combinations(self):
         augment_types = self.get_augmentation_types()
         # Create dummylist with index 1 to 10 using range
@@ -43,9 +51,10 @@ class ReshaperAndAugmenter:
         return sequences
 
 
-
+    """
+    When called uppon, this function will reshape and augment the images in the input folder and save them to the output folder.
+    """
     def reshape_and_augment(self, input_path, output_path):
-
         # Remove old folder if it exists and make new folder.
         if os.path.exists(output_path):
             shutil.rmtree(output_path)
@@ -75,10 +84,11 @@ class ReshaperAndAugmenter:
                 # For every 100 images, print a dot to show progress
                 if name % 100 == 0:
                     print(output_image_path)
-
         print("Augment finished")
 
-
+    """
+    This function will apply augmentation to an image and return a list of augmenged images from the image.
+    """
     def augment(self, reshaped_image):
         images_augmented = []
         # Augmenting types
