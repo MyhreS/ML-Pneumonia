@@ -2,9 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="48d70ff2-7f1c-4b03-b245-f4c346e54b92" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/data-processing/augmented-data-analysis.ipynb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data-processing/augmenterClass.py" beforeDir="false" afterPath="$PROJECT_DIR$/data-processing/augmenter_class.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data-processing/reshape-and-augment.py" beforeDir="false" afterPath="$PROJECT_DIR$/data-processing/reshape_and_augment.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -14,8 +13,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Jupyter Notebook" />
         <option value="Python Script" />
+        <option value="Jupyter Notebook" />
       </list>
     </option>
   </component>
@@ -33,14 +32,20 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_MARK_IGNORED_FILES_AS_EXCLUDED&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_MARK_IGNORED_FILES_AS_EXCLUDED": "true",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "C:/Other/Github/ML-Pneumonia/chest-xray-augmented"
   }
-}</component>
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Other\Github\ML-Pneumonia\chest-xray-augmented" />
+    </key>
+  </component>
   <component name="RunManager" selected="Python.reshape_and_augment (1)">
     <configuration name="reshape_and_augment (1)" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="ML-Pneumonia" />
@@ -149,7 +154,7 @@
       <updated>1662810929939</updated>
       <workItem from="1662810934587" duration="1195000" />
       <workItem from="1662812303599" duration="8172000" />
-      <workItem from="1662888536137" duration="10207000" />
+      <workItem from="1662888536137" duration="11134000" />
     </task>
     <servers />
   </component>
