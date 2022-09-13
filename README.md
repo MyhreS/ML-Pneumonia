@@ -9,8 +9,8 @@ neural network that can classify if a patient has pneumonia or not.
 ## Group
 The group consists of:
 Simon Myhre,
-Jubna Fathima
-and Mohaiminul Islam
+Fathima Jubina Pathari,
+and Md Mohaiminul Islam Emon
 
 ## Contents
 The repository contains the code for the visualisation of the dataset, the code for augmenting the dataset
