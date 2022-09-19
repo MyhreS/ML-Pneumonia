@@ -2,8 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="48d70ff2-7f1c-4b03-b245-f4c346e54b92" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/model/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/model/create_models.py" beforeDir="false" afterPath="$PROJECT_DIR$/model/create_models.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/model/prerun_check.py" beforeDir="false" afterPath="$PROJECT_DIR$/model/prerun_check.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />

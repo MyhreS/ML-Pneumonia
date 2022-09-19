@@ -25,7 +25,6 @@ def prerun_check(check_gpu = True, delete_previous_runs = False):
 
     # Check if GPU is available
     if check_gpu:
-        print("--GPU--")
         print(tf.test.gpu_device_name())
 
     return name_of_run
