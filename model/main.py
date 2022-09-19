@@ -1,9 +1,7 @@
 import load_data, create_models, train_model, prerun_check, save_model
-import datetime
 # Generate a unique name for this run
-name_of_run = datetime.datetime.now().strftime("%Y-%m-%d--%H-%M-%S")
 
-prerun_check.prerun_check(name_of_run, check_gpu=True, delete_previous_runs=True)
+name_of_run = prerun_check.prerun_check(check_gpu=True, delete_previous_runs=False)
 
 train_ds, val_ds, test_ds, class_names = load_data.load_data("../data/chest-xray-dummy/train", "../data/chest-xray-dummy/val", "../data/chest-xray-dummy/test", (224, 224), 32, 'grayscale')
 
