@@ -22,6 +22,7 @@ def create_model(input_shape, num_classes, learning_rate):
         loss='binary_crossentropy',
         metrics=['accuracy']
     )
+    model._name = "model_lr_{}".format(learning_rate)
     return model
 
 def create_models(input_shape, class_names):
