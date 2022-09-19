@@ -11,7 +11,7 @@ models = create_models.create_models((224, 224, 1), class_names)
 
 for model in models:
     model.summary()
-    model, history = train_model.train_model(model, train_ds, val_ds, epochs=2, patience=3, name_of_run=name_of_run)
+    model = train_model.train_model(model, train_ds, val_ds, epochs=2, patience=3, name_of_run=name_of_run)
     print("Evaluating model")
     test_results = model.evaluate(test_ds)
 
