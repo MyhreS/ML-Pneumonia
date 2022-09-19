@@ -5,3 +5,6 @@
 
 # Ignore all files in model/runs
 model/runs/*
+
+# Igore all .pyc files
+*.pyc
