@@ -1,4 +1,4 @@
-import load_data, create_models, train_model, prerun_check
+import load_data, create_models, train_model, prerun_check, save_model
 import datetime
 # Generate a unique name for this run
 name_of_run = datetime.datetime.now().strftime("%Y-%m-%d--%H-%M-%S")
@@ -14,6 +14,8 @@ for model in models:
     model, history = train_model.train_model(model, train_ds, val_ds, epochs=2, patience=3, name_of_run=name_of_run)
     print("Evaluating model")
     test_results = model.evaluate(test_ds)
+
+    save_model.save_model(model, name_of_run=name_of_run)
 
 
 
