@@ -8,7 +8,7 @@ TRAIN_PATH = "../data/chest-xray-dummy/train"
 TEST_PATH = "../data/chest-xray-dummy/test"
 VAL_PATH = "../data/chest-xray-dummy/val"
 IMG_SHAPE = (224, 224, 1)
-EPOCHS = 10
+EPOCHS = 2
 PATIENCE = 3
 LEANING_RATE = 0.00005
 BATCH_SIZE = 32
@@ -39,7 +39,8 @@ for generated_model in generated_models:
         train_model.train_model(model, train_ds, val_ds, EPOCHS, PATIENCE, name_of_run)
         print("Evaluating model")
         test_results = model.evaluate(test_ds)
-        save_model.save_model(model, name_of_run)
+
+        save_model.save_model(model, name_of_run, test_results)
 
 
 
