@@ -18,30 +18,27 @@ def add_dense_layer(a, model_stack):
         model_stack.append(["Dense", 16])
 
 def add_between_layer(count, i, model_stack):
-    if i == 0 and count == 0:
+    if i == 0:
         model_stack.append(["MaxPooling2D", ])
-    elif i == 0 and count == 1:
-        model_stack.append(["BatchNormalization", ])
-    elif i == 0 and count == 2:
-        model_stack.append(["Dropout", 0.2])
     elif i == 1 and count == 0:
-        model_stack.append(["Dropout", 0.2])
+        model_stack.append(["MaxPooling2D", ])
     elif i == 1 and count == 1:
-        model_stack.append(["MaxPooling2D", ])
+        model_stack.append(["BatchNormalization", ])
     elif i == 1 and count == 2:
-        model_stack.append(["BatchNormalization", ])
+        model_stack.append(["Dropout", 0.2])
     elif i == 2 and count == 0:
-        model_stack.append(["BatchNormalization", ])
+        model_stack.append(["Dropout", 0.2])
     elif i == 2 and count == 1:
-        model_stack.append(["Dropout", 0.2])
+        model_stack.append(["MaxPooling2D", ])
     elif i == 2 and count == 2:
-        model_stack.append(["MaxPooling2D", ])
-    elif i == 3:
-        model_stack.append(["MaxPooling2D", ])
-    elif i == 4:
         model_stack.append(["BatchNormalization", ])
-    elif i == 5:
+    elif i == 3 and count == 0:
+        model_stack.append(["BatchNormalization", ])
+    elif i == 3 and count == 1:
         model_stack.append(["Dropout", 0.2])
+    elif i == 3 and count == 2:
+        model_stack.append(["MaxPooling2D", ])
+
 
 
 
@@ -71,7 +68,6 @@ def create_model(numb_conv_layers, numb_dense_layers, i):
     # Add dense
     for a in range(numb_dense_layers):
         add_dense_layer(a, model_stack)
-    model_stack.append(["Dense", 1])
     return model_stack
 
 

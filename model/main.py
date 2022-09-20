@@ -12,8 +12,8 @@ LEANING_RATE = 0.0001
 BATCH_SIZE = 32
 
 # Arcitecture search
-CONV_LAYERS = [5, 7]
-DENSE_LAYERS = [2, 3, 4]
+CONV_LAYERS = [3, 5, 7]
+DENSE_LAYERS = [1, 2, 3, 4]
 
 # Hyperparameter search
 BATCH_SIZES = [32, 128, 256]
@@ -40,16 +40,6 @@ for generated_model in generated_models:
         save_model.save_model(model, name_of_run)
     except Exception as e: # If downsampled too much it will throw an error
         continue
-"""
-for model in models:
-    model.summary()
-    model = train_model.train_model(model, train_ds, val_ds, epochs=EPOCHS, patience=PATIENCE, name_of_run=name_of_run)
-    print("Evaluating model")
-    test_results = model.evaluate(test_ds)
-
-    save_model.save_model(model, name_of_run=name_of_run)
-"""
-
 
 
 
