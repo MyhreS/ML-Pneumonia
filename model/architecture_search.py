@@ -26,7 +26,7 @@ train_ds, val_ds, test_ds, class_names = load_data.load_data(TRAIN_PATH, VAL_PAT
 generated_models = generate_architecture_models.generate_models(CONV_LAYERS, DENSE_LAYERS)
 
 for generated_model in generated_models:
-    model = create_model.create_model(generated_model, IMG_SHAPE, class_names, LEARNING_RATE)
+    model = create_model.create_model(generated_model, IMG_SHAPE, class_names, LEARNING_RATE, BATCH_SIZE)
     if model is not None:
         model.summary()
         train_model.train_model(model, train_ds, val_ds, EPOCHS, PATIENCE, name_of_run, SAVE_DIR)
