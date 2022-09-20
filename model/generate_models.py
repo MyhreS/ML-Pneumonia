@@ -18,26 +18,33 @@ def add_dense_layer(a, model_stack):
         model_stack.append(["Dense", 16])
 
 def add_between_layer(count, i, model_stack):
-    if i == 0:
-        model_stack.append(["MaxPooling2D", ])
+    # Add batchnorm or dropout 2 every second time after conv layer. Starting with batchnorm
+    if i == 0 and count == 0:
+        model_stack.append(["BatchNormalization", ])
+    elif i == 0 and count == 1:
+        model_stack.append(["Dropout", 0.2])
+    # Add dropout or batchnorm 2 every second time after conv layer. Starting with dropout
     elif i == 1 and count == 0:
-        model_stack.append(["MaxPooling2D", ])
+        model_stack.append(["Dropout", 0.2])
     elif i == 1 and count == 1:
         model_stack.append(["BatchNormalization", ])
-    elif i == 1 and count == 2:
+    # Add dropout after every conv layer.
+    elif i == 2:
         model_stack.append(["Dropout", 0.2])
-    elif i == 2 and count == 0:
-        model_stack.append(["Dropout", 0.2])
-    elif i == 2 and count == 1:
-        model_stack.append(["MaxPooling2D", ])
-    elif i == 2 and count == 2:
+    # Add batchnorm after every conv layer.
+    elif i == 3:
         model_stack.append(["BatchNormalization", ])
-    elif i == 3 and count == 0:
-        model_stack.append(["BatchNormalization", ])
-    elif i == 3 and count == 1:
+    # Add dropout every second layer after conv layer.
+    elif i == 4 and count == 0:
         model_stack.append(["Dropout", 0.2])
-    elif i == 3 and count == 2:
-        model_stack.append(["MaxPooling2D", ])
+    elif i == 4 and count == 1:
+        pass
+    # Add batchnorm every second layer after conv layer.
+    elif i == 5 and count == 0:
+        model_stack.append(["BatchNormalization", ])
+    elif i == 5 and count == 1:
+        pass
+
 
 
 
@@ -53,11 +60,12 @@ def create_model(numb_conv_layers, numb_dense_layers, i):
     for a in range(numb_conv_layers-1):
         # Add conv layer
         add_conv_layer(a, model_stack)
+        model_stack.append(["MaxPooling2D", ])
         # Add between layer
         add_between_layer(count, i, model_stack)
         # Increase count
         count += 1
-        if count == 3:
+        if count == 2:
             count = 0
 
     # Add last conv

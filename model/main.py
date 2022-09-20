@@ -1,3 +1,5 @@
+import numpy as np
+
 import load_data, generate_models, train_model, prerun_check, save_model, create_model
 
 CHECK_GPU = True
@@ -8,7 +10,7 @@ VAL_PATH = "../data/chest-xray-dummy/val"
 IMG_SHAPE = (224, 224, 1)
 EPOCHS = 10
 PATIENCE = 3
-LEANING_RATE = 0.0001
+LEANING_RATE = 0.00005
 BATCH_SIZE = 32
 
 # Arcitecture search
@@ -31,15 +33,13 @@ train_ds, val_ds, test_ds, class_names = load_data.load_data(TRAIN_PATH, VAL_PAT
 generated_models = generate_models.generate_models(CONV_LAYERS, DENSE_LAYERS)
 
 for generated_model in generated_models:
-    try:
-        model = create_model.create_model(generated_model, IMG_SHAPE, class_names, LEANING_RATE)
+    model = create_model.create_model(generated_model, IMG_SHAPE, class_names, LEANING_RATE)
+    if model is not None:
         model.summary()
         train_model.train_model(model, train_ds, val_ds, EPOCHS, PATIENCE, name_of_run)
         print("Evaluating model")
         test_results = model.evaluate(test_ds)
         save_model.save_model(model, name_of_run)
-    except Exception as e: # If downsampled too much it will throw an error
-        continue
 
 
 
