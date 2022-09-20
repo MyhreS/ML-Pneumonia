@@ -4,7 +4,8 @@
 *.png
 
 # Ignore all files in model/runs
-model/runs/*
+model/architecture_search/*
+model/hyperparameter_search/*
 
 # Igore all .pyc files
 *.pyc
