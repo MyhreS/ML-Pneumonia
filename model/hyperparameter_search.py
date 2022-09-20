@@ -1,4 +1,4 @@
-import load_data, generate_hyperparameter_models, train_model, prerun_check, save_model, create_model
+import load_data, hyperparameter_tune_model, train_model, prerun_check, save_model, create_model
 
 CHECK_GPU = True
 DELETE_PREVIOUS_RUNS = True
@@ -11,29 +11,33 @@ EPOCHS = 2
 PATIENCE = 3
 
 # Hyperparameter_search sizes
-Conv_layer_filters = [16, 32, 64]
-Dense_layer_sizes = [128, 256, 512]
-LEANING_RATEs = [0.00005, 0.0001, 0.0005, 0.001]
+CONV_LAYER_FILTERs = [16, 32, 64]
+LEARNING_RATEs = [0.00005, 0.0001, 0.0005, 0.001]
 BATCH_SIZEs = [16, 32, 64]
-
-
+OPTIMIZERs = ["adam", "sgd", "rmsprop"]
+ACTIVATIONs = ["relu", "tanh"]
+LOSS_FUNCTIONs = ["binary_crossentropy", "mean_squared_error"]
 
 
 name_of_run = prerun_check.prerun_check(save_dir=SAVE_DIR, check_gpu=CHECK_GPU, delete_previous_runs=DELETE_PREVIOUS_RUNS)
 
-train_ds, val_ds, test_ds, class_names = load_data.load_data(TRAIN_PATH, VAL_PATH, TEST_PATH, IMG_SHAPE, BATCH_SIZE)
+for batch_size in BATCH_SIZEs:
+    train_ds, val_ds, test_ds, class_names = load_data.load_data(TRAIN_PATH, VAL_PATH, TEST_PATH, IMG_SHAPE, batch_size)
 
-generated_models = generate_hyperparameter_models.generate_models(Conv_layer_filters, Dense_layer_sizes, LEANING_RATEs, BATCH_SIZEs)
-
-for generated_model in generated_models:
-    model = create_model.create_model(generated_model, IMG_SHAPE, class_names, LEARNING_RATE)
-    if model is not None:
-        model.summary()
-        train_model.train_model(model, train_ds, val_ds, EPOCHS, PATIENCE, name_of_run, SAVE_DIR)
-        print("Evaluating model")
-        test_results = model.evaluate(test_ds)
-
-        save_model.save_model(model, name_of_run, test_results, SAVE_DIR)
+    for first_conv_layer_filter in CONV_LAYER_FILTERs:
+        for second_conv_layer_filter in CONV_LAYER_FILTERs:
+            for third_conv_layer_filter in CONV_LAYER_FILTERs:
+                for optimizer in OPTIMIZERs:
+                    for activation in ACTIVATIONs:
+                        for loss_function in LOSS_FUNCTIONs:
+                            for learning_rate in LEARNING_RATEs:
+                                model = hyperparameter_tune_model.create_model(first_conv_layer_filter, second_conv_layer_filter, third_conv_layer_filter, optimizer, activation, loss_function, learning_rate, IMG_SHAPE)
+                                model._name += "_batchsize-{}".format(batch_size)
+                                model.summary()
+                                train_model.train_model(model, train_ds, val_ds, EPOCHS, PATIENCE, name_of_run, SAVE_DIR)
+                                print("Evaluating model")
+                                test_results = model.evaluate(test_ds)
+                                save_model.save_model(model, name_of_run, test_results, SAVE_DIR)
 
 
 
