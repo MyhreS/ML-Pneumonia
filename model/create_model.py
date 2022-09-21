@@ -1,9 +1,10 @@
+import numpy as np
 import tensorflow as tf
 from tensorflow.keras.layers import Dense, Dropout, Flatten, Conv2D, MaxPooling2D, BatchNormalization, Input, Rescaling
 from tensorflow.keras.optimizers import Adam
 from tensorflow.keras.models import Sequential
 
-def create_model(generated_model, input_shape, classes, learning_rate, batch_size):
+def create_model(generated_model, input_shape, classes, learning_rate, batch_size, params_low, params_high):
     try:
         model = Sequential()
         model.add(Input(shape=input_shape))
@@ -37,4 +38,9 @@ def create_model(generated_model, input_shape, classes, learning_rate, batch_siz
         print("Error creating model:", e)
         print("Continuing to next model...")
         return None
+    trainableParams = np.sum([np.prod(v.get_shape()) for v in model.trainable_weights])
+    if trainableParams < params_low or trainableParams > params_high:
+        print("Model has too many or too few parameters, continuing to next model...")
+        return None
+
     return model
