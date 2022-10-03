@@ -9,3 +9,6 @@ model/hyperparameter_search/*
 
 # Igore all .pyc files
 *.pyc
+
+# Ignore workspace.xml
+.idea/*
