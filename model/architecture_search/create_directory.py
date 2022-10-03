@@ -2,7 +2,7 @@ import os
 import pathlib
 import shutil
 
-def create_diretory(name_of_run, delete_similiar_run=False):
+def create_directory(name_of_run, delete_similiar_run=False):
     # Absolute path to this directory
     current_directory = pathlib.Path(__file__).parent.absolute()
     runs_dir = os.path.join(current_directory, "model_runs")
