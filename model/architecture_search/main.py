@@ -1,6 +1,7 @@
 from create_directory import create_diretory
 from load_data import load_data
 from save_model_info import save_model_info
+from save_test_results import save_test_results
 from tensorflow.keras.layers import Dense, Dropout, Flatten, Conv2D, MaxPooling2D, BatchNormalization, Input, Rescaling
 from tensorflow.keras.optimizers import Adam
 from tensorflow.keras.models import Sequential
@@ -59,12 +60,21 @@ tensorboard = TensorBoard(
     )
 
 # Train model
-model.fit(
+history = model.fit(
     train_ds,
     validation_data=val_ds,
     epochs=2,
     callbacks=[early_stopping, tensorboard]
     )
+
+# Evaluate model
+print("Evaluate model")
+test_results = model.evaluate(test_ds)
+
+# Save last epoch and test results
+save_test_results(history, test_results, this_run_dir_path)
+
+
 
 
 
