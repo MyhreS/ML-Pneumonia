@@ -14,7 +14,7 @@ IMG_SHAPE = (224, 224, 1)
 BATCH_SIZE = 32
 
 # Create directory for this run
-create_diretory(NAME_OF_RUN)
+this_run_dir_path = create_diretory(NAME_OF_RUN, True)
 
 # Load the data
 train_ds, val_ds, test_ds, class_names =  load_data(TRAIN_PATH, VAL_PATH, TEST_PATH, IMG_SHAPE, BATCH_SIZE)
