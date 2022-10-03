@@ -13,4 +13,4 @@
 old_model/*
 
 # Ignore all in model_runs
-model_runs/*
+model/architecture_search/model_runs/*
