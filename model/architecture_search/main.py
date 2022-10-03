@@ -3,7 +3,7 @@ from load_data import load_data
 from tensorflow.keras.layers import Dense, Dropout, Flatten, Conv2D, MaxPooling2D, BatchNormalization, Input, Rescaling
 from tensorflow.keras.optimizers import Adam
 from tensorflow.keras.models import Sequential
-from tensorflow.keras.callbacks import EarlyStopping
+from tensorflow.keras.callbacks import EarlyStopping, TensorBoard
 
 # Set variables
 NAME_OF_RUN = "4"
@@ -42,6 +42,29 @@ model.compile(
     )
 
 model.summary()
+
+# Set callbacks
+early_stopping = EarlyStopping(
+    monitor='val_loss',
+    patience=3
+    )
+logs_dir = "{}/tensorboard/{}".format(this_run_dir_path, model.name)
+tensorboard = TensorBoard(
+    log_dir=logs_dir
+    )
+
+# Train model
+model.fit(
+    train_ds,
+    validation_data=val_ds,
+    epochs=2,
+    callbacks=[early_stopping, tensorboard]
+    )
+
+
+
+
+
 
 
 
