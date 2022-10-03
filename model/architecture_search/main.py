@@ -1,7 +1,7 @@
-from create_directory import create_diretory
+from create_directory import create_directory
 from load_data import load_data
 from save_model_info import save_model_info
-from save_test_results import save_test_results
+from save_results import save_results
 from tensorflow.keras.layers import Dense, Dropout, Flatten, Conv2D, MaxPooling2D, BatchNormalization, Input, Rescaling
 from tensorflow.keras.optimizers import Adam
 from tensorflow.keras.models import Sequential
@@ -9,16 +9,16 @@ from tensorflow.keras.callbacks import EarlyStopping, TensorBoard
 
 # Set variables
 NAME_OF_RUN = "1"
-TRAIN_PATH = "../../data/chest-xray-dummy/train"
-VAL_PATH = "../../data/chest-xray-dummy/val"
-TEST_PATH = "../../data/chest-xray-dummy/test"
+TRAIN_PATH = "../../data/chest-xray-augmented/train"
+VAL_PATH = "../../data/chest-xray-augmented/val"
+TEST_PATH = "../../data/chest-xray-augmented/test"
 IMG_SHAPE = (224, 224, 1)
 BATCH_SIZE = 32
 LEARNING_RATE = 0.0001
-EPOCHS = 2
+EPOCHS = 50
 
 # Create directory for this run
-this_run_dir_path = create_diretory(NAME_OF_RUN, True)
+this_run_dir_path = create_directory(NAME_OF_RUN, True)
 
 # Load the data
 train_ds, val_ds, test_ds, class_names =  load_data(TRAIN_PATH, VAL_PATH, TEST_PATH, IMG_SHAPE, BATCH_SIZE)
@@ -74,7 +74,11 @@ print("Evaluate model")
 test_results = model.evaluate(test_ds)
 
 # Save last epoch and test results
-save_test_results(history, test_results, this_run_dir_path)
+save_results(history, test_results, this_run_dir_path)
+
+
+
+
 
 
 

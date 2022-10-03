@@ -1,5 +1,5 @@
 
-def save_test_results(history, test_results, this_run_dir_path):
+def save_results(history, test_results, this_run_dir_path):
     last_epoch_loss = history.history['loss'][-1]
     last_epoch_accuracy = history.history['accuracy'][-1]
     last_epoch_val_loss = history.history['val_loss'][-1]
