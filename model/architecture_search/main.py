@@ -9,13 +9,13 @@ from tensorflow.keras.callbacks import EarlyStopping, TensorBoard
 
 # Set variables
 NAME_OF_RUN = "1"
-TRAIN_PATH = "../../data/chest-xray-augmented/train"
-VAL_PATH = "../../data/chest-xray-augmented/val"
-TEST_PATH = "../../data/chest-xray-augmented/test"
+TRAIN_PATH = "../../data/chest-xray-dummy/train"
+VAL_PATH = "../../data/chest-xray-dummy/val"
+TEST_PATH = "../../data/chest-xray-dummy/test"
 IMG_SHAPE = (224, 224, 1)
 BATCH_SIZE = 32
 LEARNING_RATE = 0.0001
-EPOCHS = 50
+EPOCHS = 2
 
 # Create directory for this run
 this_run_dir_path = create_directory(NAME_OF_RUN, True)
@@ -48,7 +48,6 @@ model.compile(
     metrics=['accuracy']
     )
 
-
 model.summary()
 
 # Set callbacks
@@ -74,7 +73,7 @@ print("Evaluate model")
 test_results = model.evaluate(test_ds)
 
 # Save last epoch and test results
-save_results(history, test_results, this_run_dir_path)
+save_results(history, test_results, LEARNING_RATE, BATCH_SIZE, this_run_dir_path)
 
 
 
