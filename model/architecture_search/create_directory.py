@@ -25,10 +25,11 @@ def create_diretory(name_of_run, delete_previous_runs=False):
         # Cast error that stops the program
         raise Exception("Directory/run already exists. Rename the run or delete the directory.")
 
-    # Create subdirectory storing the models results
-    results_dir = os.path.join(this_run_dir, "results")
-    if not os.path.exists(results_dir):
-        os.makedirs(results_dir)
+    # Create a txt file storing the models results
+    results_file = os.path.join(this_run_dir, "results.txt")
+    if not os.path.exists(results_file):
+        with open(results_file, "w") as f:
+            f.write("")
 
     # Create subsubdirectory for saving the tensorboard logs
     tensorboard_dir = os.path.join(this_run_dir, "tensorboard")
@@ -36,14 +37,15 @@ def create_diretory(name_of_run, delete_previous_runs=False):
         os.makedirs(tensorboard_dir)
 
     # Create subsubdiretory for saving the info about the model
-    model_info_dir = os.path.join(this_run_dir, "model_info")
-    if not os.path.exists(model_info_dir):
-        os.makedirs(model_info_dir)
+    model_info_file = os.path.join(this_run_dir, "model_info.txt")
+    if not os.path.exists(model_info_file):
+        with open(model_info_file, "w") as f:
+            f.write("")
 
     # Create a txt file for my comments
     comments_file = os.path.join(this_run_dir, "comments.txt")
     if not os.path.exists(comments_file):
         with open(comments_file, "w") as f:
             f.write("")
-        
+
     return this_run_dir
