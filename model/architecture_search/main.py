@@ -14,6 +14,8 @@ VAL_PATH = "../../data/chest-xray-dummy/val"
 TEST_PATH = "../../data/chest-xray-dummy/test"
 IMG_SHAPE = (224, 224, 1)
 BATCH_SIZE = 32
+LEARNING_RATE = 0.0001
+EPOCHS = 2
 
 # Create directory for this run
 this_run_dir_path = create_diretory(NAME_OF_RUN, True)
@@ -41,7 +43,7 @@ save_model_info(model, this_run_dir_path)
 
 # Compile model
 model.compile(
-    optimizer=Adam(learning_rate=0.00001),
+    optimizer=Adam(learning_rate=LEARNING_RATE),
     loss='binary_crossentropy',
     metrics=['accuracy']
     )
@@ -63,7 +65,7 @@ tensorboard = TensorBoard(
 history = model.fit(
     train_ds,
     validation_data=val_ds,
-    epochs=2,
+    epochs=EPOCHS,
     callbacks=[early_stopping, tensorboard]
     )
 
