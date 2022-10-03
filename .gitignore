@@ -3,10 +3,6 @@
 *.jpeg
 *.png
 
-# Ignore all files in old_model/runs
-model/architecture_search/*
-model/hyperparameter_search/*
-
 # Igore all .pyc files
 *.pyc
 
