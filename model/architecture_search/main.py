@@ -1,7 +1,7 @@
 from create_directory import create_diretory
 from load_data import load_data
 
-NAME_OF_RUN = "1"
+NAME_OF_RUN = "3"
 TRAIN_PATH = "../../data/chest-xray-dummy/train"
 VAL_PATH = "../../data/chest-xray-dummy/val"
 TEST_PATH = "../../data/chest-xray-dummy/test"

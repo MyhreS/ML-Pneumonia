@@ -35,7 +35,8 @@ def create_diretory(name_of_run):
     if not os.path.exists(model_info_dir):
         os.makedirs(model_info_dir)
 
-    # Create subsubdiretory for my comments on the model
-    comments_dir = os.path.join(this_run_dir, "comments")
-    if not os.path.exists(comments_dir):
-        os.makedirs(comments_dir)
+    # Create a txt file for my comments
+    comments_file = os.path.join(this_run_dir, "comments.txt")
+    if not os.path.exists(comments_file):
+        with open(comments_file, "w") as f:
+            f.write("")
