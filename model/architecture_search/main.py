@@ -1,12 +1,13 @@
 from create_directory import create_diretory
 from load_data import load_data
+from save_model_info import save_model_info
 from tensorflow.keras.layers import Dense, Dropout, Flatten, Conv2D, MaxPooling2D, BatchNormalization, Input, Rescaling
 from tensorflow.keras.optimizers import Adam
 from tensorflow.keras.models import Sequential
 from tensorflow.keras.callbacks import EarlyStopping, TensorBoard
 
 # Set variables
-NAME_OF_RUN = "4"
+NAME_OF_RUN = "1"
 TRAIN_PATH = "../../data/chest-xray-dummy/train"
 VAL_PATH = "../../data/chest-xray-dummy/val"
 TEST_PATH = "../../data/chest-xray-dummy/test"
@@ -34,12 +35,16 @@ model = Sequential([
     Dense(len(class_names)-1, activation='sigmoid')
     ])
 
+# Save model info
+save_model_info(model, this_run_dir_path)
+
 # Compile model
 model.compile(
     optimizer=Adam(learning_rate=0.00001),
     loss='binary_crossentropy',
     metrics=['accuracy']
     )
+
 
 model.summary()
 
