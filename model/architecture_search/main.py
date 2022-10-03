@@ -9,16 +9,16 @@ from tensorflow.keras.callbacks import EarlyStopping, TensorBoard
 
 # Set variables
 NAME_OF_RUN = "1"
-TRAIN_PATH = "../../data/chest-xray-dummy/train"
-VAL_PATH = "../../data/chest-xray-dummy/val"
-TEST_PATH = "../../data/chest-xray-dummy/test"
+TRAIN_PATH = "../../data/chest-xray-augmented/train"
+VAL_PATH = "../../data/chest-xray-augmented/val"
+TEST_PATH = "../../data/chest-xray-augmented/test"
 IMG_SHAPE = (224, 224, 1)
 BATCH_SIZE = 32
-LEARNING_RATE = 0.0001
-EPOCHS = 2
+LEARNING_RATE = 0.00001
+EPOCHS = 50
 
 # Create directory for this run
-this_run_dir_path = create_directory(NAME_OF_RUN, True)
+this_run_dir_path = create_directory(NAME_OF_RUN, False)
 
 # Load the data
 train_ds, val_ds, test_ds, class_names =  load_data(TRAIN_PATH, VAL_PATH, TEST_PATH, IMG_SHAPE, BATCH_SIZE)
