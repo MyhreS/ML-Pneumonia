@@ -12,3 +12,6 @@ model/hyperparameter_search/*
 
 # Ignore workspace.xml
 .idea/*
+
+# Ignore old_model
+old_model/*
