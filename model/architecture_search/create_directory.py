@@ -2,23 +2,24 @@ import os
 import pathlib
 import shutil
 
-def create_diretory(name_of_run, delete_previous_runs=False):
+def create_diretory(name_of_run, delete_similiar_run=False):
     # Absolute path to this directory
     current_directory = pathlib.Path(__file__).parent.absolute()
     runs_dir = os.path.join(current_directory, "model_runs")
-
-    # Delete previous runs if delete_previous_runs is True
-    if delete_previous_runs:
-        if os.path.exists(runs_dir):
-            shutil.rmtree(runs_dir)
 
     # Create a "model_runs" directory if it does not already exist
     if not os.path.exists(runs_dir):
         os.makedirs("model_runs")
 
-    # Create subdirectory for this run
+
+
     this_run_dir = os.path.join(runs_dir, name_of_run)
-    print(this_run_dir)
+    # Delete the directory if it already exists
+    if os.path.exists(this_run_dir):
+        if delete_similiar_run:
+            shutil.rmtree(this_run_dir)
+
+    # Create subdirectory for this run
     if not os.path.exists(this_run_dir):
         os.makedirs(this_run_dir)
     else:
