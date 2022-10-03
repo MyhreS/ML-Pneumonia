@@ -11,3 +11,6 @@
 
 # Ignore old_model
 old_model/*
+
+# Ignore all in model_runs
+model_runs/*
