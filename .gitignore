@@ -3,12 +3,14 @@
 *.jpeg
 *.png
 
-# Ignore all files in model/runs
-model/architecture_search/*
-model/hyperparameter_search/*
-
 # Igore all .pyc files
 *.pyc
 
 # Ignore workspace.xml
 .idea/*
+
+# Ignore old_model
+old_model/*
+
+# Ignore all in model_runs
+model/architecture_search/model_runs/*
