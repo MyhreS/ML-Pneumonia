@@ -12,7 +12,6 @@ from tensorflow.keras.applications import InceptionV3
 TRAIN_PATH = "../../data/chest-xray-dummy/train"
 VAL_PATH = "../../data/chest-xray-dummy/val"
 TEST_PATH = "../../data/chest-xray-dummy/test"
-IMG_SHAPE = (224, 224, 1)
 IMG_SHAPE_FT = (224, 224, 3)
 
 EPOCHS = 30
