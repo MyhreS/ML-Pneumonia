@@ -15,3 +15,4 @@ old_model/*
 # Ignore all in model_runs
 model/architecture_search/model_runs/*
 model/hyperparameter_tuning/model_runs/*
+model/hyperparameter_tuning/model_runs_2/*
