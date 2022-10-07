@@ -52,8 +52,10 @@ for first_conv_layer_filter in CONV_FILTERs:
         # Two layers of dense
         for first_dense_layer_filter in DENSE_FILTERs:
             for second_dense_layer_filter in DENSE_FILTERs:
+
                 print("\n\nIteration: {}\n".format(i))
                 i += 1
+
                 name = "ft_conv-{}-{}-dense-{}-{}".format(first_conv_layer_filter, second_conv_layer_filter, first_dense_layer_filter, second_dense_layer_filter)
 
                 model = Sequential([
@@ -105,13 +107,6 @@ for first_conv_layer_filter in CONV_FILTERs:
                 if test_results[1] > best_result:
                     best_result_model_name = model.name
                     best_result = test_results[1]
-
-# Save best result to file
-with open("{}/best_result.txt".format(runs_dir), "w") as f:
-    f.write("Best result model: {}\n".format(best_result_model_name))
-    f.write("Best result: {}".format(best_result))
-
-
 
 
 

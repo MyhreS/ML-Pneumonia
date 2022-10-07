@@ -49,7 +49,6 @@ for learning in LEARNING_RATEs:
     for optimizer in OPTIMIZERs:
         for epoch in EPOCHS:
             print("\n\nIteration: {}\n".format(i))
-            i += 1
             name = "ft_learning-{}-optimizer-{}-epoch-{}".format(learning, optimizer,epoch)
 
             model = Sequential([
@@ -106,13 +105,6 @@ for learning in LEARNING_RATEs:
             if test_results[1] > best_result:
                 best_result_model_name = model.name
                 best_result = test_results[1]
-
-# Save best result to file
-with open("{}/best_result.txt".format(runs_dir), "w") as f:
-    f.write("Best result model: {}\n".format(best_result_model_name))
-    f.write("Best result: {}".format(best_result))
-
-
 
 
 
