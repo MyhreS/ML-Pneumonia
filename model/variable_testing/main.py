@@ -1,8 +1,8 @@
 import os
 import pathlib
-from load_data import load_data
-from save_results import save_results
-from tensorflow.keras.layers import Dense, Dropout, Flatten, Conv2D, MaxPooling2D, BatchNormalization, Input, Rescaling
+from model.variable_testing.utils.load_data import load_data
+from model.variable_testing.utils.save_results import save_results
+from tensorflow.keras.layers import Dense, Dropout, Flatten, Conv2D
 from tensorflow.keras.optimizers import Adam, SGD
 from tensorflow.keras.models import Sequential, Model
 from tensorflow.keras.callbacks import EarlyStopping, TensorBoard
