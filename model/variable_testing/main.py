@@ -9,6 +9,11 @@ from tensorflow.keras.callbacks import EarlyStopping, TensorBoard
 import shutil
 from tensorflow.keras.applications import InceptionV3
 
+"""
+This script has been used to test different combinations of variables such as learning rate, optimizers and number of epochs trained.
+"""
+
+
 TRAIN_PATH = "../../data/chest-xray-dummy/train"
 VAL_PATH = "../../data/chest-xray-dummy/val"
 TEST_PATH = "../../data/chest-xray-dummy/test"
@@ -29,11 +34,7 @@ os.mkdir(runs_dir)
 best_result_model_name = ""
 best_result = 0
 
-
-"""
-Hyperparameter tuning the model from approach two
-"""
-
+# Load data
 train_ds, val_ds, test_ds, class_names =  load_data(TRAIN_PATH, VAL_PATH, TEST_PATH, IMG_SHAPE_FT, 32)
 
 extractor = InceptionV3(input_shape=IMG_SHAPE_FT,

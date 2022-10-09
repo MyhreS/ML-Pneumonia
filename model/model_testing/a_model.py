@@ -1,6 +1,10 @@
 from tensorflow.keras.models import load_model
 from tensorflow.keras.utils import image_dataset_from_directory
-import numpy as np
+
+"""
+This script was used to test models, and perform the "Some selected inputs task" from the assignment.
+"""
+
 
 test_ds = image_dataset_from_directory(
         "../../data/chest-xray-augmented/test",

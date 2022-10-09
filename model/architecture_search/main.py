@@ -7,6 +7,15 @@ from tensorflow.keras.optimizers import Adam
 from tensorflow.keras.models import Sequential
 from tensorflow.keras.callbacks import EarlyStopping, TensorBoard
 
+"""
+This script has been used to manually do architecture search. 
+
+It is a script that has been changed for every search, based on the previous search. It created a directory
+for every run, named NAME_OF_RUN. In this directory, the model architecture is saved, its testing results
+and a txt file to make comments.  
+"""
+
+
 # Set variables
 NAME_OF_RUN = "1"
 TRAIN_PATH = "../../data/chest-xray-augmented/train"

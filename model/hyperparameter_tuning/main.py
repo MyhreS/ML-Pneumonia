@@ -9,6 +9,13 @@ from tensorflow.keras.callbacks import EarlyStopping, TensorBoard
 import shutil
 from tensorflow.keras.applications import InceptionV3
 
+"""
+This script has been used to automatically perform hyperparameter tuning.
+
+It was set to run for all the iterations and save the history to tensorBoard and the testing results to a txt file.
+It iterates through 35ish different combinations of hyperparameters for the best performing model from the architecture search.
+"""
+
 TRAIN_PATH = "../../data/chest-xray-dummy/train"
 VAL_PATH = "../../data/chest-xray-dummy/val"
 TEST_PATH = "../../data/chest-xray-dummy/test"
