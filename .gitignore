@@ -15,7 +15,7 @@ old_model/*
 # Ignore all in model_runs
 model/architecture_search/model_runs/*
 model/hyperparameter_tuning/model_runs/*
-model/hyperparameter_tuning/model_runs_2/*
+model/variable_testing/model_runs/*
 
 # Ignore all .h5 files
 *.h5
