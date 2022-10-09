@@ -20,7 +20,7 @@ OPTIMIZERs = ['adam', 'sgd']
 
 # Cleaning directory
 current_directory = pathlib.Path(__file__).parent.absolute()
-runs_dir = os.path.join(current_directory, "model_runs_2")
+runs_dir = os.path.join(current_directory, "../hyperparameter_tuning/model_runs_2")
 if os.path.exists(runs_dir):
     shutil.rmtree(runs_dir)
 os.mkdir(runs_dir)
