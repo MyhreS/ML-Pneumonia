@@ -5,11 +5,11 @@ import shutil
 def create_directory(name_of_run, delete_similiar_run=False):
     # Absolute path to this directory
     current_directory = pathlib.Path(__file__).parent.absolute()
-    runs_dir = os.path.join(current_directory, "model_runs")
+    runs_dir = os.path.join(current_directory, "../model_runs")
 
     # Create a "model_runs" directory if it does not already exist
     if not os.path.exists(runs_dir):
-        os.makedirs("model_runs")
+        os.makedirs("../model_runs")
 
 
 

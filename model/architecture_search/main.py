@@ -1,8 +1,8 @@
-from create_directory import create_directory
-from load_data import load_data
-from save_model_info import save_model_info
-from save_results import save_results
-from tensorflow.keras.layers import Dense, Dropout, Flatten, Conv2D, MaxPooling2D, BatchNormalization, Input, Rescaling
+from model.architecture_search.utils.create_directory import create_directory
+from model.architecture_search.utils.load_data import load_data
+from model.architecture_search.utils.save_model_info import save_model_info
+from model.architecture_search.utils.save_results import save_results
+from tensorflow.keras.layers import Dense, Flatten, Conv2D, MaxPooling2D, Input, Rescaling
 from tensorflow.keras.optimizers import Adam
 from tensorflow.keras.models import Sequential
 from tensorflow.keras.callbacks import EarlyStopping, TensorBoard
