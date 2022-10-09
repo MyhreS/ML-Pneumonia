@@ -20,7 +20,7 @@ OPTIMIZERs = ['adam', 'sgd']
 
 # Cleaning directory
 current_directory = pathlib.Path(__file__).parent.absolute()
-runs_dir = os.path.join(current_directory, "../hyperparameter_tuning/model_runs_2")
+runs_dir = os.path.join(current_directory, "model_runs")
 if os.path.exists(runs_dir):
     shutil.rmtree(runs_dir)
 os.mkdir(runs_dir)
@@ -82,7 +82,7 @@ for learning in LEARNING_RATEs:
                 monitor='val_loss',
                 patience=3
             )
-            logs_dir = "{}/tensorboard/{}".format('model_runs_2', model.name)
+            logs_dir = "{}/tensorboard/{}".format('model_runs', model.name)
             tensorboard = TensorBoard(
                 log_dir=logs_dir
             )
