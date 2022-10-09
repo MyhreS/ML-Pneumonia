@@ -1,6 +1,12 @@
 import cv2
 import glob
 
+"""
+This script has been used to manually reshape the images inside the test directory.
+Its a short and easy script to use.
+"""
+
+
 def rechape_image(image_path, size):
     image = cv2.imread(image_path)
     # Resize image

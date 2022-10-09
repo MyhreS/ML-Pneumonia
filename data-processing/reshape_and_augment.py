@@ -1,8 +1,11 @@
 from augmenter_class import ReshaperAndAugmenter
 
 """
-This file calls reshape and augmenting functions on the images in train and val folders.
+This script is used to reshape and augment the images inside the train and validation folders. 
+It calls reshape and augmenting functions on the images in train and val folders.
 """
+
+
 aug = ReshaperAndAugmenter()
 # Reshape and augment the data
 aug.reshape_and_augment("../data/chest-xray-balanced/train/NORMAL/", "../chest-xray-augmented/train/NORMAL/")

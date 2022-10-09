@@ -6,7 +6,7 @@ import os
 from imgaug import augmenters as iaa
 
 """
-This class is used to augment images and save them to a new directory.
+This class is used to resize and augment images and save them to a new directory.
 """
 class ReshaperAndAugmenter:
     def __init__(self):
