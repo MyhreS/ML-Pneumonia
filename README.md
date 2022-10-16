@@ -15,5 +15,3 @@ and Md Mohaiminul Islam Emon
 ## Contents
 The repository contains the code for the visualisation of the dataset, the code for augmenting the dataset
 and the code for the neural network.
-It also contains the report for the assignment.
-It excludes the dataset, which can be downloaded from Kaggle.
