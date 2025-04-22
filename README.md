@@ -1,4 +1,4 @@
-# ML-Pneumonia
+# ML Pneumonia
  
 Project to learn about and create a neural network on a dataset from 
 Kaggle: https://www.kaggle.com/paultimothymooney/chest-xray-pneumonia. This dataset contains 
